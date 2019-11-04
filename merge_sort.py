@@ -66,6 +66,10 @@ if __name__ == "__main__":
     print("merge_sort ...................... answer ..............................")
     print(answer_b)
 
+    # In merge sort we decided to split our list into two parts 
+    # and recurse on them. 
+    # In this question we will consider splitting our list into three parts.
+
     answer_c = mergesortthree(z)
     print("mergesortthree ...................... answer")
     print(answer_c)

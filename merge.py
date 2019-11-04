@@ -88,7 +88,3 @@ if __name__ == "__main__":
 
 	answer = merge([1,2],[1,2,3,4,5,6,7,8])
 	print(answer)
-
-	# In merge sort we decided to split our list into two parts 
-	# and recurse on them. 
-	# In this question we will consider splitting our list into three parts.
