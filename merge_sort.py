@@ -15,7 +15,6 @@ mergesort(A, lo, hi)
 from merge import merge, mergethree
 
 def mergesort_three(A):
-    #print("{}".format(A))
     if len(A) <= 1: # returns the list when is one element
         return A
     mid = len(A) // 3
@@ -24,7 +23,7 @@ def mergesort_three(A):
     primera = mergesort_three(A[:mid])
     segunda = mergesort_three(A[mid:mid*2])
     tercera = mergesort_three(A[mid*2:])
-    return mergethree(primera,segunda,tercera)
+    return merge(merge(primera,segunda),tercera)
 
 def mergesortthree(A=[12,11,13,5,6,7,1,9,8,15]): # son 10 elementos
     return mergesort_three(A)
