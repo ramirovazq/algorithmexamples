@@ -12,7 +12,24 @@ mergesort(A, lo, hi)
     copy elements from C back into A
 
 '''
-from merge import merge 
+from merge import merge, mergethree
+
+def mergesort_three(A):
+    #print("{}".format(A))
+    if len(A) <= 1: # returns the list when is one element
+        return A
+    mid = len(A) // 3
+    if mid == 0: # case when list is 2 elements
+        mid = 1
+    primera = mergesort_three(A[:mid])
+    segunda = mergesort_three(A[mid:mid*2])
+    tercera = mergesort_three(A[mid*2:])
+    return mergethree(primera,segunda,tercera)
+
+def mergesorttree(A=[12,11,13,5,6,7,1,9,8,15]): # son 10 elementos
+    return mergesort_three(A)
+
+# ............................
 
 def mergesort_(A):
     if len(A) <= 1: # returns the list when is one element
@@ -20,6 +37,7 @@ def mergesort_(A):
     mid = len(A) // 2
     primera = mergesort_(A[:mid])
     segunda = mergesort_(A[mid:])
+    #print("primera {}  segunda {}".format(primera, segunda))
     return merge(primera, segunda)
 
 def mergesort(A=[12,11,13,5,6,7,1,9,8,15]): # son 10 elementos
@@ -49,5 +67,9 @@ if __name__ == "__main__":
     print("merge_sort ...................... answer ..............................")
     print(answer_b)
 
-    print("compare two versiones ...................... answer ..............................")
-    print(answer_a == answer_b)
+    answer_c = mergesorttree(z)
+    print("mergesorttree ...................... answer")
+    print(answer_c)
+
+    print("compare tree versiones ...................... answer ..............................")
+    print(answer_a == answer_b == answer_c)

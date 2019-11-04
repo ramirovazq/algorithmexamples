@@ -46,6 +46,15 @@ def merge(A=[3,7,12,18], B=[2,5,16,21]):
 		k+=1
 	return C
 
+def mergethree(A=[3,7,12,18], B=[2,5,16,21], C=[6,8,12,19]):
+	'''
+	A and B must be already sorted
+	'''
+	#print("A {}    B {}".format(A,B))
+	intermediate = merge(A,B)
+	return merge(intermediate, C)
+
+
 if __name__ == "__main__":
 	answer = merge()
 	print(answer)
@@ -71,3 +80,15 @@ if __name__ == "__main__":
 
 	answer = merge([1,1],[1,2])
 	print(answer)
+
+
+	# Consider merging lists two sorted lists A and B 
+	# of length  𝑛  and  𝑚  respectively such that  𝑛<𝑚 , 
+	# using the merge function as shown in the lecture slides.
+
+	answer = merge([1,2],[1,2,3,4,5,6,7,8])
+	print(answer)
+
+	# In merge sort we decided to split our list into two parts 
+	# and recurse on them. 
+	# In this question we will consider splitting our list into three parts.
