@@ -26,7 +26,7 @@ def mergesort_three(A):
     tercera = mergesort_three(A[mid*2:])
     return mergethree(primera,segunda,tercera)
 
-def mergesorttree(A=[12,11,13,5,6,7,1,9,8,15]): # son 10 elementos
+def mergesortthree(A=[12,11,13,5,6,7,1,9,8,15]): # son 10 elementos
     return mergesort_three(A)
 
 # ............................
@@ -67,8 +67,8 @@ if __name__ == "__main__":
     print("merge_sort ...................... answer ..............................")
     print(answer_b)
 
-    answer_c = mergesorttree(z)
-    print("mergesorttree ...................... answer")
+    answer_c = mergesortthree(z)
+    print("mergesortthree ...................... answer")
     print(answer_c)
 
     print("compare tree versiones ...................... answer ..............................")
