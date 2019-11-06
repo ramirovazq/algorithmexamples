@@ -1,5 +1,6 @@
 '''
-MERGE SORT
+O(nlgn)
+MERGE SORT PSEUDOCODE
 mergesort (A)
     mergesort(A, 0, len(A)-1)
 

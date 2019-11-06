@@ -1,4 +1,5 @@
 '''
+expectation O(n lgn)
 QUICK SORT PSEUDOCODE
 quicksort(A)
     quicksort(A, 0, len(A)-1)
