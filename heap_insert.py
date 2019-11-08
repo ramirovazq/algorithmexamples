@@ -40,3 +40,5 @@ if __name__ == "__main__":
 
     answer_a = insert(11, [3,7,6,8,10])
     assert answer_a == [3,7,6,8,10,11], ("no encuentra el elemento correcto")
+
+    # quiz 1.3 not appears 
