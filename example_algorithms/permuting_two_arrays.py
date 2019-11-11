@@ -15,6 +15,7 @@ Sample Output
 YES
 NO
 
+https://www.hackerrank.com/challenges/two-arrays/problem?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=24-hour-campaign
 '''
 
 
