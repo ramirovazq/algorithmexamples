@@ -44,8 +44,12 @@ function mostPopularDays(week) { // @param week an array of Weekday objects
                     answerArray.push(weekObject.name);
                 }
             }
-        })
-
+        }) // week.forEach
+        if ( answerArray.length === 1) {
+            answerArray = answerArray[0]
+        }  else {
+            console.log("not necessary to modify ...");
+        }
     } 
     return answerArray;
 }
@@ -179,7 +183,7 @@ function testPopularDays() {
     var answerOne = mostPopularDays(arrayOfWeekdayTestOne);
 
     if (validateArray(answerOne)) {
-        console.log(`answer must be: [${saturday.name}]`);
+        console.log(`answer must be: ${saturday.name}`);
         console.log(answerOne);
     } else {
         console.log("respuesta VACIA ....");      
