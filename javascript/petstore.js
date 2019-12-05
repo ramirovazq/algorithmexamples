@@ -29,6 +29,7 @@ function mostPopularDays(week) { // @param week an array of Weekday objects
     if (validateArray(week)) { // validateArray, not undefined, not null and must have length
         week.sort(function (a,b) {return b.traffic - a.traffic}); // sorted, first goes with more traffic
         var must_traffic_day = week[0];
+        answerArray = [];
         answerArray.push(must_traffic_day.name); // push the day with must traffic
 
         // console.log('week sorted ..........');
@@ -144,6 +145,28 @@ function testCreateAnimal() {
 
 
 function testPopularDays() {
+
+    var arrayOfWeekdayTestOne = null;
+    var answerOne = mostPopularDays(arrayOfWeekdayTestOne);
+
+    if (validateArray(answerOne)) {
+        console.log(`Sth wrong happend.`);
+    } else {
+        console.log(`answer, must be null. Answer is: ${answerOne}`);      
+    }
+
+
+
+    var arrayOfWeekdayTestOne = [];
+    var answerOne = mostPopularDays(arrayOfWeekdayTestOne);
+
+    if (validateArray(answerOne)) {
+        console.log(`Sth wrong happend.`);
+    } else {
+        console.log(`answer, must be null. Answer is: ${answerOne}`);      
+    }
+
+
     var monday    = new Weekday("lunes", 5)
     var tuesday   = new Weekday("martes", 12);
     var wednesday = new Weekday('miércoles', 10);
@@ -174,6 +197,19 @@ function testPopularDays() {
     } else {
         console.log("respuesta VACIA ....");      
     }
+
+
+    var arrayOfWeekdayTestOne = [thursday, friday, saturday];// array of week day objects 
+
+    var answerOne = mostPopularDays(arrayOfWeekdayTestOne);
+
+    if (validateArray(answerOne)) {
+        console.log(`answer must be: [${saturday.name}] `);
+        console.log(answerOne);
+    } else {
+        console.log("respuesta VACIA ....");      
+    }
+
 
 
 }
