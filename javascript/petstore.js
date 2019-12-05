@@ -21,8 +21,21 @@ function calculateFoodOrder(numAnimals, avgFood) {
  * @param week an array of Weekday objects
  * @return a string containing the name of the most popular day of the week if there is only one most popular day, and an array of the strings containing the names of the most popular days if there are more than one that are most popular
  */
-function mostPopularDays(week) {
+
+function validateArray(simpleArray) {
+    answer = false;
+    if ((simpleArray !== undefined) && (simpleArray !== null)) { // array must be not null and not undefined
+        if (simpleArray.length) {
+            answer = true;
+        } 
+    }
+    return answer
+}
+
+function mostPopularDays(week) { // @param week an array of Weekday objects
     // IMPLEMENT THIS FUNCTION!
+    var answerArray = [];
+    return answerArray;
 }
 
 
@@ -41,31 +54,20 @@ function createAnimalObjects(names, types, breeds) {
     // IMPLEMENT THIS FUNCTION!
     var answerArray = [];
     // IMPLEMENT THIS FUNCTION!
-    if (((names !== undefined)  && (names !== null)) && 
-        ((types !== undefined)  && (types !== null)) && 
-        ((breeds !== undefined) && (breeds !== null))) { // check if someone is null
-        if ((names.length) && (types.length) && (breeds.length)) { // unequal to zero
-            if ((names.length === types.length) && (breeds.length === types.length)) { // arrays with equal lenght 
+    if (validateArray(names) && validateArray(types) &&  validateArray(breeds)) { // check if someone is null
+        if ((names.length === types.length) && (breeds.length === types.length)) { // arrays with equal lenght 
+            // this.__proto__ = new Animal()
+            names.forEach((a, i) => {
+                answerArray.push(new Animal(a, types[i], breeds[i]));
+            }); // forEach
 
-                // this.__proto__ = new Animal()
-                names.forEach((a, i) => {
-                    console.log("...ini");
-                    console.log(a); 
-                    console.log(types[i]); 
-                    console.log(breeds[i]);
-                    console.log("...fin");
-                    answerArray.push(new Animal(a, types[i], breeds[i]));
-                }); // forEach
-
-                // answerArray.push("ok");
-            } else {
-                console.log("not equal lengths");
-            }
+            // answerArray.push("ok");
         } else {
-            console.log("one array is zero ...");
+            console.log("not equal lengths");
         }
+       
     } else {
-        console.log("someone is null or undefined");
+        console.log("someone is null, undefined or length zero");
     }
     return answerArray
 }
@@ -112,20 +114,40 @@ function helloworld() {
     return 'hello world!';
 }
 
-function mytest() {
+function testCreateAnimal() {
     names  = ["Peter", "Jessy", "Atlanta"]
     types  = ["Dog", "Cat", "Bird"]
-    // types = null;
     // breeds = null;
-    // breeds = [];
+    // var breeds = [];
     // var breeds;
     breeds = ["Pug",  "Shorthair", "Tucan"]
 
     var arrayAnimalObjects = createAnimalObjects(names, types, breeds)
-    if (arrayAnimalObjects) {
-        console.log(`arrayAnimalObjects ....${arrayAnimalObjects}`);
+    if (validateArray(arrayAnimalObjects)) { // if array is not empty, or not undefined or not null, and with length
         console.log("answer ....");
         console.log(JSON.stringify(arrayAnimalObjects));     
+    }  else {
+        console.log("respuesta VACIA ....");   
+    }
+}
+
+
+function testPopularDays() {
+    var monday    = new Weekday("lunes", 5)
+    var tuesday   = new Weekday("martes", 12);
+    var wednesday = new Weekday("miércoles", 10);
+    var thursday  = new Weekday("jueves", 14);
+    var friday    = new Weekday("viernes", 18);
+    var saturday  = new Weekday("sábado", 28);
+    var sunday    = new Weekday("domingo", 32);
+
+    var arrayOfWeekdayTestOne = {monday, tuesday, wednesday, thursday, friday, saturday, sunday}// array of week day objects 
+    var answerOne = mostPopularDays(arrayOfWeekdayTestOne);
+    if (answerOne) {
+        console.log("answer, test one ............ ini");
+        console.log(`answer must be: ${sunday.name} , ${sunday.traffic}`);
+        console.log(answerOne);
+        console.log("answer, test one ............ fin");
     }
     
 }
