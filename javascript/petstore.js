@@ -219,6 +219,10 @@ function testPopularDays() {
 }
 
 function validateArray(simpleArray) {
+    /*
+    * @param simpleArray is an array
+    * @return true if the array is not null, or is not undefined, and if the array has at least one element
+    */
     answer = false;
     if ((simpleArray !== undefined) && (simpleArray !== null)) { // array must be not null and not undefined
         if (simpleArray.length) {
