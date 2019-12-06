@@ -9,6 +9,18 @@
  * 				 week, or -1 if the numAnimals or avgFood are less than 0 or non-numeric
  */
 function calculateFoodOrder(numAnimals, avgFood) {
+    var numAnimals = Number(numAnimals);
+    var avgFood    = Number(avgFood);
+
+    if (isNaN(numAnimals) || isNaN(avgFood)) {
+        return -1
+    }
+
+    if ((numAnimals < 0) || (avgFood < 0)) {
+        return -1
+    }
+
+    return numAnimals * avgFood
     // IMPLEMENT THIS FUNCTION!
 }
 
@@ -128,6 +140,15 @@ function Animal (name, type, breed) {
  */
 function helloworld() {
     return 'hello world!';
+}
+
+function testCalculateFoodOrder() {
+    answer = calculateFoodOrder("3", "2.5")
+    console.log("answer must be .... 7.5");
+    console.log(answer);
+
+
+
 }
 
 function testCreateAnimal() {
