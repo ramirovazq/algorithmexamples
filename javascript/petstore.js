@@ -147,6 +147,21 @@ function testCalculateFoodOrder() {
     console.log("answer must be .... 7.5");
     console.log(answer);
 
+    answer = calculateFoodOrder(0, "2.5")
+    console.log("answer must be .... 0");
+    console.log(answer);
+
+    answer = calculateFoodOrder(-1, "2.5")
+    console.log("answer must be .... -1");
+    console.log(answer);
+
+    answer = calculateFoodOrder("holamundo", "2.5")
+    console.log("answer must be .... -1");
+    console.log(answer);
+
+    answer = calculateFoodOrder(6, 3)
+    console.log("answer must be .... 18");
+    console.log(answer);
 
 
 }
